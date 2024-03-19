@@ -1,0 +1,610 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
+/* ------------------------------
+ TEXT / LAYOUT STYLES
+--------------------------------*/
+header ul,
+footer ul {
+	list-style-type: none;
+}
+
+header a {
+	text-decoration: none;
+	color: inherit;
+	transition: 0.2s ease;
+}
+
+header a:hover {
+	color: #81d3f7;
+}
+
+body {
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+p {
+	font-weight: 300;
+	padding: 0 1rem;
+}
+
+h1,
+h2,
+h3 {
+	text-transform: uppercase;
+}
+
+h4 {
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+.overlay {
+	background: rgba(16, 90, 141, 0.7)
+}
+
+.section {
+	padding: 6rem 0;
+}
+
+.center-contents {
+	text-align: center;
+}
+
+.body-copy {
+	max-width: 60rem;
+	margin: 0 auto;
+	line-height: 1.5rem;
+}
+
+h2 {
+	margin-bottom: 1rem;
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.blue {
+	color: #105a8d;
+}
+
+.white {
+	color: #ffffff;
+}
+
+.anchor:target {
+	padding-top: 300px;
+}
+
+.two-column {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.dtg-list {
+	list-style-type: square;
+	text-align: left;
+	font-weight: 300;
+}
+
+
+/* ------------------------------
+ NAVIGATION
+--------------------------------*/
+header#dtg-navigation {
+	background-color: #105a8d;
+	width: 100%;
+	position: fixed;
+	z-index: 2;
+}
+
+.all-nav-items {
+	display: flex;
+	align-items: flex-end;
+	padding: 1rem;
+}
+
+.company-logo {
+	margin-right: 1rem;
+}
+
+header .nav-item {
+	color: #ffffff;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.main-nav {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.main-links {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nav-item {
+	margin: 0.25rem 1rem;
+}
+
+.nav-cta {
+	align-self: center;
+}
+
+#desktop-banner p {
+	padding: 0;
+}
+
+/* mobile nav*/
+.hamburger-nav {
+	display: none;
+}
+
+.hamburger-menu {
+	z-index: 5;
+	cursor: pointer;
+	position: absolute;
+	top: 28px;
+	right: 40px;
+	z-index: 100;
+}
+
+.ham-bar-1,
+.ham-bar-2,
+.ham-bar-3 {
+	width: 35px !important;
+	height: 5px;
+	background-color: #fff;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+
+.change .ham-bar-1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+	background-color: #fff;
+}
+
+.change .ham-bar-2 {
+	opacity: 0;
+}
+
+.change .ham-bar-3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
+	background-color: #fff;
+}
+
+.hamburger-nav-links {
+	position: absolute;
+	top: -0;
+	z-index: 100;
+	text-align: center;
+	overflow-x: hidden;
+	height: 100vh;
+	width: 100%;
+	transition: 0.5s ease;
+	background: #105a8d;
+	background-color: #105a8d;
+	list-style-type: none;
+	line-height: 2.5rem;
+	padding: 5rem 0;
+}
+
+.hamburger-nav-links a {
+	color: #fff;
+	padding: 0.5rem;
+	font-size: 1.5rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.closed {
+	height: 0 !important;
+	padding: 0 !important;
+}
+
+
+
+/* ------------------------------
+  BUTTON STYLES
+--------------------------------*/
+.cta-btn {
+	border: 4px solid #ffffff;
+	border-right-width: 2.5rem;
+	padding: 0.5rem 2rem;
+	color: #ffffff;
+	white-space: nowrap;
+	text-transform: uppercase;
+	position: relative;
+	transition: 0.3s ease;
+	text-decoration: none;
+}
+
+.cta-btn:after {
+	content: '›';
+	color: #105a8d;
+	position: absolute;
+	right: -1.75rem;
+	font-weight: 600;
+	font-size: 2.5rem;
+	top: -0.65rem;
+}
+
+.cta-btn:hover {
+	color: #105a8d;
+	background-color: #fff;
+}
+
+.btn-container {
+	margin: 2rem 0;
+}
+
+.orange-btn {
+	color: #f7a543;
+	border-color: #f7a543;
+}
+
+.orange-btn:hover {
+	background-color: #f7a543;
+	color: #ffffff;
+}
+
+
+
+/* ------------------------------
+  OFFSET CONTENT WITH FIXED NAV BAR
+--------------------------------*/
+
+#services::before,
+#jobs::before,
+#benefits::before,
+#about-us::before {
+	display: block;
+	content: " ";
+	margin-top: -100px;
+	height: 100px;
+	visibility: hidden;
+	pointer-events: none;
+	background-color: white;
+}
+
+
+
+/* ------------------------------
+  BANNER
+--------------------------------*/
+#dtg-banner {
+	background: url('img/dtg-truck-w-logo.jpg');
+	height: 36.85rem;
+	background-size: cover;
+	background-position: center 40%;
+	padding-top: 6.85rem
+}
+
+.gradient-overlay {
+	height: 100%;
+	background: rgba(16, 90, 141, .3);
+	background: -webkit-linear-gradient(left, rgba(16, 90, 141, 0.3) 0%, rgba(16, 90, 141, 0) 100%);
+	background: -o-linear-gradient(left, rgba(16, 90, 141, 0.3) 0%, rgba(16, 90, 141, 0) 100%);
+	background: linear-gradient(to right, rgba(16, 90, 141, 0.3) 0%, rgba(16, 90, 141, 0) 100%);
+}
+
+.banner-padding {
+	padding: 14.5rem 0 0;
+}
+
+.banner-contents {
+	color: #ffffff;
+	border: 3px solid #ffffff;
+	max-width: 40rem;
+	padding: 1rem;
+	text-align: right;
+	position: relative;
+	left: -1rem;
+}
+
+.banner-contents div {
+	margin-left: 8rem;
+}
+
+/* MOBILE BANNER */
+#mobile-banner {
+	color: #ffffff;
+	background-color: #105a8d;
+	padding: 2rem 1rem;
+	text-align: right;
+	display: none;
+}
+
+#mobile-banner p {
+	padding: 0;
+}
+
+
+/* ------------------------------
+  FIRST SECTION
+--------------------------------*/
+.gray-divider {
+	border: none;
+	height: 4px;
+	background-color: #d1d3d4;
+	margin-top: 2rem;
+
+}
+
+.header-icon {
+	position: relative;
+	top: -4rem;
+	margin-bottom: -3rem
+}
+
+
+/* ------------------------------
+  APPLY NOW SECTION
+--------------------------------*/
+#apply-now-section {
+	background: url('img/truck-with-logo-2.jpg');
+	background-position: center;
+	background-size: cover;
+	color: #ffffff;
+}
+
+
+/* ------------------------------
+  OPERATIONS/TEAM SECTION
+--------------------------------*/
+#operations {
+	background: rgb(16, 90, 141);
+	background: linear-gradient(90deg, rgba(16, 90, 141, 1) 0%, rgba(16, 90, 141, 0.8) 100%);
+	color: #ffffff;
+}
+
+.team-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.team-member {
+	width: 15rem;
+	margin: 1rem;
+}
+
+.employee-name {
+	color: #fcb960;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.transition-shape {
+	width: 3rem;
+	height: 3rem;
+	background-color: #ffffff;
+	position: relative;
+	margin: 0 auto -3rem;
+	transform: rotate(45deg);
+	top: -1.5rem;
+}
+
+
+/* ------------------------------
+  SERVICES SECTION
+--------------------------------*/
+.services-section {
+	background: url('img/maryland-state.png');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.gray-overlay {
+	background: rgba(241, 242, 242, 0.9);
+}
+
+.services-container {
+	margin-top: 2rem;
+}
+
+.service-flex {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 1rem;
+}
+
+.service-flex img {
+	align-self: flex-start;
+}
+
+.service-content {
+	max-width: 30rem;
+	text-align: left;
+}
+
+.service-content h3 {
+	padding: 0 1rem;
+}
+
+.service-content p {
+	color: #105a8d;
+}
+
+
+/* ------------------------------
+  OUR BENEFITS SECTION
+--------------------------------*/
+.benefits-flex {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 2rem;
+}
+
+.benefits-img {
+	border: 4px solid #105a8d;
+	margin: 1rem;
+	align-self: baseline;
+}
+
+.benefits-list {
+	padding: 1rem;
+	line-height: 1.75rem;
+	list-style-position: inside;
+	color: #105a8d;
+	max-width: 30rem;
+}
+
+
+
+/* ------------------------------
+  JOBS SECTION
+--------------------------------*/
+
+.jobs-section {
+	background-color: #f2f2f2;
+}
+
+.job-flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 60rem;
+	margin: 0 auto;
+	margin-top: 2rem;
+}
+
+.job-contents {
+	max-width: 25rem;
+	text-align: left;
+	margin: 1rem;
+}
+
+.job-contents h3 {
+	padding: 0 1rem
+}
+
+
+/* ------------------------------
+  PARTNERS SECTION
+--------------------------------*/
+.partner-list {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.partner-logo {
+	align-self: center;
+	margin: 1rem
+}
+.job-contents ul {
+	padding: 0.5rem 2rem;
+	font-size: 0.85rem;
+}
+
+/* ------------------------------
+  FOOTER
+--------------------------------*/
+#footer {
+	background-color: #105a8d;
+	padding: 2rem 1rem;
+}
+
+
+
+/* ------------------------------
+ CONTACT US
+--------------------------------*/
+#contact-us {
+	background-color: #f2f2f2;
+	padding-top: 5rem;
+}
+
+#contact-us p {
+	margin-bottom: -3rem;
+}
+
+div {
+	box-shadow: none !important;
+}
+
+
+/* ------------------------------
+  MEDIA QUERIES
+--------------------------------*/
+@media only screen and (max-width: 900px) {
+
+	.main-links,
+	.nav-cta {
+		display: none;
+	}
+
+	.hamburger-nav {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 740px) {
+	.job-flex-container {
+		justify-content: left;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	#mobile-banner {
+		display: block;
+	}
+
+	#desktop-banner {
+		display: none;
+	}
+
+	.section {
+		padding: 4rem 1rem;
+	}
+
+	#services {
+		background-attachment: scroll;
+	}
+
+	.partner-logo {
+		max-width: 12rem;
+	}
+
+	#dtg-banner {
+		height: 23.85rem;
+		background-position: center 4rem;
+	}
+
+	.company-logo {
+		width: 242px;
+	}
+
+	.benefits-img {
+		width: 20rem;
+		height: 13.5rem;
+		object-fit: cover;
+	}
+}
+
+@media only screen and (max-width: 584px) {
+	.service-content {
+		text-align: center;
+	}
+
+	.service-flex {
+		justify-content: center;
+	}
+}
